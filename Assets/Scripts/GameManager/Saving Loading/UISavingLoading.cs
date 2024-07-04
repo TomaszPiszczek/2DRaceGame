@@ -6,6 +6,7 @@ using TMPro;
 
 
 //CHANGE THE VIEW OF SAVE LOAD CARRER IF CARRER EXISTS SHOW LOAD BUTTON IF NOT SHOW NEW CARRER BUTTON
+//SETS PLAYER PREFS gameSaveSlot
 public class UISavingLoading : MonoBehaviour
 {
     public TMP_Text carrerSlot1;
@@ -22,22 +23,21 @@ public class UISavingLoading : MonoBehaviour
 
     private void Awake()
     {
-            if(SaveManager.dataExists(1)){
+            if(SaveManager.DataExists(1)){
                 carrerSlot1.text ="Load game";
             }else
             {
                 carrerSlot1.text ="New Carrer"; 
             }
 
-            if(SaveManager.dataExists(2)){
-                Debug.Log(SaveManager.dataExists(2));
+            if(SaveManager.DataExists(2)){
                 carrerSlot2.text ="Load game";
             }else
             {
                 carrerSlot2.text ="New Carrer";
             }
 
-            if(SaveManager.dataExists(3)){
+            if(SaveManager.DataExists(3)){
                 carrerSlot3.text ="Load game";
             }else
             {
@@ -51,18 +51,18 @@ public class UISavingLoading : MonoBehaviour
 
         PlayerPrefs.SetInt("gameSaveSlot", slot);
         PlayerPrefs.Save();
-        if(SaveManager.dataExists(slot))
+        if(SaveManager.DataExists(slot))
         {
             Debug.Log("load game");
             SaveManager.LoadPlayer(slot);
         }else
         {
             Debug.Log("new player");
-            SaveManager.newPlayerSave(slot); 
+            SaveManager.NewPlayerSave(slot); 
             
         }
 
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainGameUI");
 
     }
 

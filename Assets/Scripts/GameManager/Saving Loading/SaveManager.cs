@@ -2,14 +2,15 @@ using System.IO;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
+using System;
 [System.Serializable]
-public static class SaveManager 
+
+//SAVING PLAYER / LOADING PLAYER DATA 
+public static class SaveManager
 {
-  
-    
     public static void SavePlayer(Player player, int slot)
     {
-        if(Player.Instance == null)
+        if (player == null)
         {
             Debug.LogError("Player is null");
             return;
@@ -20,19 +21,23 @@ public static class SaveManager
             return;
         }
 
-        BinaryFormatter formatter = new BinaryFormatter();
-        
-        string path = Application.persistentDataPath + "/player_slot" + slot + ".txt";
-        FileStream stream = new FileStream(path, FileMode.Create);
-        
-        PlayerData data = new PlayerData(Player.Instance);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
-        Debug.Log("Data saved" + data.money);
+        try
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            string path = Application.persistentDataPath + "/player_slot" + slot + ".dat";
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                formatter.Serialize(stream, player);
+            }
+            Debug.Log("Data saved: " + player.money);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Failed to save player data: " + e.Message);
+        }
     }
 
-    public static void newPlayerSave( int slot)
+    public static void NewPlayerSave(int slot)
     {
         if (slot < 1 || slot > 3)
         {
@@ -40,41 +45,49 @@ public static class SaveManager
             return;
         }
 
-        BinaryFormatter formatter = new BinaryFormatter();
-        
-        string path = Application.persistentDataPath + "/player_slot" + slot + ".txt";
-        FileStream stream = new FileStream(path, FileMode.Create);
-        Garage garage = new Garage(1,new List<Car>{},new List<CarPart>{});
-        Player player = new Player(0,garage);
-        PlayerData playerData = new PlayerData(player);
-        formatter.Serialize(stream, playerData);
-        stream.Close();
-        Debug.Log("New Player save created");
-       
+        try
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            string path = Application.persistentDataPath + "/player_slot" + slot + ".dat";
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                Garage garage = new Garage(1, new List<Car>(), new List<CarPart>());
+                Player player = new Player(0, garage);
+                formatter.Serialize(stream, player);
+            }
+            Debug.Log("New Player save created");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Failed to create new player save: " + e.Message);
+        }
     }
-
-
 
     public static void LoadPlayer(int slot)
     {
         if (slot < 1 || slot > 3)
         {
             Debug.LogError("Invalid slot number! Slot number should be between 1 and 3.");
-            
+            return;
         }
 
-        string path = Application.persistentDataPath + "/player_slot" + slot + ".txt";
+        string path = Application.persistentDataPath + "/player_slot" + slot + ".dat";
         if (File.Exists(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-
-            Player player = new Player(data.money,data.garage);
-
-            Debug.Log("Player sucessfully loaded from file" + player.money);
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                using (FileStream stream = new FileStream(path, FileMode.Open))
+                {
+                    Player player = formatter.Deserialize(stream) as Player;
+                    Player.Instance = player;
+                }
+                Debug.Log("Player successfully loaded from slot: " + slot);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Failed to load player data: " + e.Message);
+            }
         }
         else
         {
@@ -82,12 +95,9 @@ public static class SaveManager
         }
     }
 
-    public static bool dataExists(int slot){
-        string path = Application.persistentDataPath + "/player_slot" + slot + ".txt";
-
+    public static bool DataExists(int slot)
+    {
+        string path = Application.persistentDataPath + "/player_slot" + slot + ".dat";
         return File.Exists(path);
     }
-
-
-
 }
