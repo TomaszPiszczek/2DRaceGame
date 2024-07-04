@@ -1,0 +1,31 @@
+{
+    "tracks": [
+        {
+            "timeRecord": 45.67,
+            "topSpeed": 525.34,
+            "laps": 34,
+            "polePositions": 12,
+            "wins": 23,
+            "trackName": "Track1",
+            "trackImage": null
+        },
+        {
+            "timeRecord": 78.91,
+            "topSpeed": 612.45,
+            "laps": 28,
+            "polePositions": 7,
+            "wins": 19,
+            "trackName": "Track2",
+            "trackImage": null
+        },
+        {
+            "timeRecord": 23.56,
+            "topSpeed": 483.23,
+            "laps": 50,
+            "polePositions": 15,
+            "wins": 30,
+            "trackName": "Track3",
+            "trackImage": null
+        }
+    ]
+}
