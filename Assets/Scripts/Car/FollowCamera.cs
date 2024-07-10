@@ -15,5 +15,6 @@ public class FollowCamera : MonoBehaviour
     void LateUpdate()
     {
         transform.position = carToFollow.transform.position + new Vector3(0,0,-10);
+        Debug.Log(transform.position);
     }
 }
