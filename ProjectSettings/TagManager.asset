@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Track
+    uniqueID: 1082180299
+    locked: 0
+  - name: Skid
+    uniqueID: 2434948125
+    locked: 0
+  - name: Car
+    uniqueID: 4254081387
+    locked: 0
+  - name: Smoke
+    uniqueID: 657213451
     locked: 0

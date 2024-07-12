@@ -5,11 +5,11 @@ using UnityEngine;
 public class Collision : MonoBehaviour
 {
 
-     private SpeedSetup speedSetup; 
+     private TopDownCarController speedSetup; 
 
     private void Start()
     {
-        speedSetup = GetComponent<SpeedSetup>();
+        speedSetup = GetComponent<TopDownCarController>();
     }
     void  OnCollisionEnter2D() {
     Debug.Log("Speed" + speedSetup.velocityVsUp);
