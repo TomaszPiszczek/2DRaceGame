@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 6977044187052657767}
   - component: {fileID: 3051072232858205209}
   - component: {fileID: 2377701262373631375}
+  - component: {fileID: 5513853023109774316}
+  - component: {fileID: -4999620951804337242}
   m_Layer: 0
   m_Name: car_people5 (1)
   m_TagString: Untagged
@@ -308,6 +310,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPostionText: {fileID: 2349980024774546307}
+--- !u!114 &5513853023109774316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109230636347179647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd82838c7b938740949508a62eab43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUiInput: 1
+  playerNumber: 0
+--- !u!114 &-4999620951804337242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109230636347179647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efd43402e839de4e901aae2bbfef294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSpriteObject: {fileID: 4686313543216056989}
+  ghostCarPlaybackPrefab: {fileID: 4157295558854794388, guid: 93d877bb540bf4044a57aec7a08f3a87,
+    type: 3}
 --- !u!1 &3209816965965547251
 GameObject:
   m_ObjectHideFlags: 0

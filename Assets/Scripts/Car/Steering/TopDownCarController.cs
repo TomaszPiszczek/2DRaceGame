@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TopDownCarController : MonoBehaviour
 {
-  
+   [Header("Car setttings")]
     [SerializeField] float turnFactor  = 4;
     [SerializeField] float accelertaionFactor = 10f;
 
@@ -24,66 +24,59 @@ public class TopDownCarController : MonoBehaviour
     float steerAmount =0;
 
     float accelerationInput=0;
-    void Start()
+    float steeringInput=0;
+    void Awake()
     {
         carRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        accelerationInput = Input.GetAxisRaw("Vertical");
-        speedUpdate( accelerationInput);
+        applyEngineForce( );
 
-        
         killOrthofonalVelocity();
 
-        applyStering(Input.GetAxisRaw("Horizontal"));
-
-
-
-
-
-        
+        applyStering();
+    
     }
 
 
-    private void speedUpdate(float input){
+    private void applyEngineForce(){
         velocityVsUp = Vector2.Dot(transform.up,carRigidBody2D.velocity);
 
-        if(velocityVsUp > maxSpeed && input >0) return;
-        if(velocityVsUp < -maxSpeed * 0.5f && input <0){
+        if(velocityVsUp > maxSpeed && accelerationInput >0) return;
+        if(velocityVsUp < -maxSpeed * 0.5f && accelerationInput <0){
             return;
         } 
-        if(carRigidBody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && input >0) return;
+        if(carRigidBody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput >0) return;
 
 
 
-        if(input ==0){
+        if(accelerationInput ==0){
             carRigidBody2D.drag = Mathf.Lerp(carRigidBody2D.drag,3.0f,Time.fixedDeltaTime*3);
 
-            Debug.Log(input);
+            Debug.Log(accelerationInput);
         }else{
             carRigidBody2D.drag = 0;
 
         }
       
 
-    Vector2 engineForceVector = transform.up * input * accelertaionFactor;
+    Vector2 engineForceVector = transform.up * accelerationInput * accelertaionFactor;
 
     carRigidBody2D.AddForce(engineForceVector,ForceMode2D.Force);
 
     
     }
 
-    void applyStering(float input){
+    void applyStering(){
         float minSpeedBeforeAllowTurningFactor = (carRigidBody2D.velocity.magnitude / 8);
         minSpeedBeforeAllowTurningFactor = Mathf.Clamp01(minSpeedBeforeAllowTurningFactor);
 
-        if(velocityVsUp > 0 ){
-        rotationAngle -= input * turnFactor * minSpeedBeforeAllowTurningFactor;
-        }else{
-             rotationAngle += input * turnFactor * minSpeedBeforeAllowTurningFactor;
-        }
+        
+        rotationAngle -= steeringInput * turnFactor * minSpeedBeforeAllowTurningFactor;
+      
+         
         carRigidBody2D.MoveRotation(rotationAngle);
 
 
@@ -118,5 +111,11 @@ public class TopDownCarController : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void SetInputVector(Vector2 inputVector)
+    {
+     steeringInput = inputVector.x;
+     accelerationInput = inputVector.y;
     }
 }
