@@ -44,8 +44,8 @@ public class GhostCarDataListItem : ISerializationCallbackReceiver
         //Multiply to give 2 decimal accuracy and save data
         t = (int)(timeSinceLevelLoaded * 1000.0f);
 
-        x = (int) ( x *1000.0f);
-        y =(int) (y /1000.0f);
+        x = (int) ( position.x * 1000.0f);
+        y =(int) (position.y * 1000.0f);
 
         s = (int)(localScale.x * 1000.0f);
 
@@ -56,7 +56,7 @@ public class GhostCarDataListItem : ISerializationCallbackReceiver
     {
         //Multiply to give 2 decimal accuracy
 
-        t = (int)(timeSinceLevelLoaded / 1000.0f);
+        timeSinceLevelLoaded = t / 1000.0f;
         position.x = x /1000.0f;
         position.y = y /1000.0f;
         localScale = new Vector3(s / 1000.0f, s/1000.0f,s / 1000.0f);

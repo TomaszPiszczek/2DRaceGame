@@ -47,10 +47,10 @@ public class GhostCarPlayback : MonoBehaviour
 
         float timePassed = Time.timeSinceLevelLoad - lastStoredTime;
         float lerpPercentage =  timePassed / duration;
-        
         transform.position = Vector2.Lerp(lastStoredPostion,ghostCarDataList[currentPlaybackIndex].position,lerpPercentage);
         transform.rotation = Quaternion.Lerp(Quaternion.Euler(0,0,lastStoredRotation),Quaternion.Euler(0,0,ghostCarDataList[currentPlaybackIndex].rotationZ),lerpPercentage);
         transform.localScale = Vector3.Lerp(lastStoredLocalScale,ghostCarDataList[currentPlaybackIndex].localScale,lerpPercentage);
+
 
     }
 
@@ -59,12 +59,10 @@ public class GhostCarPlayback : MonoBehaviour
         if(!PlayerPrefs.HasKey($"{SceneManager.GetActiveScene().name}_{playerNumber}_ghost"))
         {
             Destroy(gameObject);
-            Debug.Log("DESTROYED");
         }
         else
         {
             string jsonEncodedData = PlayerPrefs.GetString($"{SceneManager.GetActiveScene().name}_{playerNumber}_ghost");
-            Debug.Log("JHSON DATa");
 
             ghostCarData = JsonUtility.FromJson<GhostCarData>(jsonEncodedData);
             ghostCarDataList = ghostCarData.GetDataList();

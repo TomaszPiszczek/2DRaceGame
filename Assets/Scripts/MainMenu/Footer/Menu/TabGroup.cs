@@ -26,7 +26,7 @@ public class TabGroup : MonoBehaviour
     {
 
         ResetTabs();
-        if(selectedTab == null || selectedTab != selectedTab)
+        if(selectedTab == null || selectedTab != button)
         {
         button.background.sprite = tabHover;
 

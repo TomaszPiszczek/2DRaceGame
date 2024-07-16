@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe34740d29ed4dacf3989aac9009e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carToFollow: {fileID: 0}
+  carToFollow: {fileID: 1180627497}
 --- !u!114 &612957679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14696,6 +14696,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 150756850}
     m_Modifications:
+    - target: {fileID: -4999620951804337242, guid: da6de60978ab51e47a0ac9b65bebd7d6,
+        type: 3}
+      propertyPath: carSpriteObject
+      value: 
+      objectReference: {fileID: 2088326029}
     - target: {fileID: 1109230636347179647, guid: da6de60978ab51e47a0ac9b65bebd7d6,
         type: 3}
       propertyPath: m_Name
@@ -14719,7 +14724,7 @@ PrefabInstance:
     - target: {fileID: 4458686187337732401, guid: da6de60978ab51e47a0ac9b65bebd7d6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4458686187337732401, guid: da6de60978ab51e47a0ac9b65bebd7d6,
         type: 3}

@@ -20,8 +20,7 @@ public class TopDownCarController : MonoBehaviour
 
 
     public float velocityVsUp =0;
-    float speedAmount=0;
-    float steerAmount =0;
+
 
     float accelerationInput=0;
     float steeringInput=0;
@@ -55,7 +54,6 @@ public class TopDownCarController : MonoBehaviour
         if(accelerationInput ==0){
             carRigidBody2D.drag = Mathf.Lerp(carRigidBody2D.drag,3.0f,Time.fixedDeltaTime*3);
 
-            Debug.Log(accelerationInput);
         }else{
             carRigidBody2D.drag = 0;
 

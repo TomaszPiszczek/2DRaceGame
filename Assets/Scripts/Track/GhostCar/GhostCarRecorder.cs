@@ -19,7 +19,6 @@ public class GhostCarRecorder : MonoBehaviour
         carInputHandler = GetComponent<CarInputHandler>();
     }
     private void Start() {
-        Debug.Log("INIT" + carInputHandler.playerNumber);
         GameObject ghostCar = Instantiate(ghostCarPlaybackPrefab);
         ghostCar.GetComponent<GhostCarPlayback>().LoadData(carInputHandler.playerNumber);
 
@@ -31,7 +30,7 @@ public class GhostCarRecorder : MonoBehaviour
 
     IEnumerator SaveCarPostionCO()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(20);
         SaveData();
     }
    IEnumerator RecordCarPostionCo()
@@ -42,10 +41,10 @@ public class GhostCarRecorder : MonoBehaviour
 
         {
         ghostCarData.AddDataItem(new GhostCarDataListItem(carRigidBody2D.position,carRigidBody2D.rotation,carSpriteObject.localScale,Time.timeSinceLevelLoad));
-        Debug.Log("RECORDING");
+
         }
     
-    yield return new WaitForSeconds(0.15f);
+    yield return new WaitForSeconds(0.01f);
 
 
     }
@@ -60,7 +59,6 @@ public class GhostCarRecorder : MonoBehaviour
     {
         PlayerPrefs.SetString($"{SceneManager.GetActiveScene().name}_{carInputHandler.playerNumber}_ghost",jsonEncodedData);
 
-        Debug.Log("SAVED DATA : " + carInputHandler.playerNumber);
         PlayerPrefs.Save();
     }
 
