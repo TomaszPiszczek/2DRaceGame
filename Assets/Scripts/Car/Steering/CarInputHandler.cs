@@ -4,43 +4,72 @@ using UnityEngine;
 
 public class CarInputHandler : MonoBehaviour
 {
-    TopDownCarController topDownCarController;
+    public int playerNumber = 1;
+    public bool isUIInput = false;
 
-    public bool isUiInput = false;
-    public int playerNumber =0;
     Vector2 inputVector = Vector2.zero;
 
+    //Components
+    TopDownCarController topDownCarController;
 
-
+    //Awake is called when the script instance is being loaded.
     void Awake()
     {
         topDownCarController = GetComponent<TopDownCarController>();
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-     private void Update() {
-
-
-        if(isUiInput)
+    // Update is called once per frame and is frame dependent
+    void Update()
+    {
+        if (isUIInput)
         {
-           
+
         }
         else
         {
-        inputVector = Vector2.zero;
-        inputVector.x = Input.GetAxisRaw("Horizontal");
-        inputVector.y = Input.GetAxisRaw("Vertical");
+            inputVector = Vector2.zero;
 
+            switch (playerNumber)
+            {
+                case 1:
+                    //Get input from Unity's input system.
+                    inputVector.x = Input.GetAxis("Horizontal");
+                    inputVector.y = Input.GetAxis("Vertical");
+                    break;
 
+                case 2:
+                    //Get input from Unity's input system.
+                    inputVector.x = Input.GetAxis("Horizontal_P2");
+                    inputVector.y = Input.GetAxis("Vertical_P2");
+                    break;
+
+                case 3:
+                    //Get input from Unity's input system.
+                    inputVector.x = Input.GetAxis("Horizontal_P3");
+                    inputVector.y = Input.GetAxis("Vertical_P3");
+                    break;
+
+                case 4:
+                    //Get input from Unity's input system.
+                    inputVector.x = Input.GetAxis("Horizontal_P4");
+                    inputVector.y = Input.GetAxis("Vertical_P4");
+                    break;
+            }
         }
-        topDownCarController.SetInputVector(inputVector);
+        
 
-      
+        //Send the input to the car controller.
+        topDownCarController.SetInputVector(inputVector);
     }
 
     public void SetInput(Vector2 newInput)
     {
-        inputVector =  newInput;
+        inputVector = newInput;
     }
-
 }

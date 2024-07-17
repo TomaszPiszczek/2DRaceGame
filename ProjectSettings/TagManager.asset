@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CheckPoint
+  - PLayer
+  - Jump
   layers:
   - Default
   - TransparentFX
@@ -14,13 +16,13 @@ TagManager:
   - UI
   - 
   - 
+  - Car
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Surfaces
+  - Flying
+  - ObjectFlying
   - 
   - 
   - 
@@ -53,4 +55,7 @@ TagManager:
     locked: 0
   - name: Smoke
     uniqueID: 657213451
+    locked: 0
+  - name: Flying
+    uniqueID: 1403249369
     locked: 0

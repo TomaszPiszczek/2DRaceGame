@@ -17,7 +17,7 @@ public class WheelTrailRenderHandler : MonoBehaviour
 
    private void Update() {
 
-    if(TopDownCarController.IsTireScreecing(out float lateralVelovity,out bool isBreaking))
+    if(TopDownCarController.IsTireScreeching(out float lateralVelovity,out bool isBreaking))
     {
         trailRenderer.emitting = true;
     }

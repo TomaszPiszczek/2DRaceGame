@@ -12,6 +12,5 @@ public class Collision : MonoBehaviour
         speedSetup = GetComponent<TopDownCarController>();
     }
     void  OnCollisionEnter2D() {
-    Debug.Log("Speed" + speedSetup.velocityVsUp);
    }
 }

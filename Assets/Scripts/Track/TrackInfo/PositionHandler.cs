@@ -12,6 +12,12 @@ public class PositionHandler : MonoBehaviour
     {
 
 
+      
+    }
+
+
+    void Start()
+    {
         CarLapCounter[] carLapCounterArray = FindObjectsOfType<CarLapCounter>();
 
         carLapCounters = carLapCounterArray.ToList<CarLapCounter>();
@@ -20,14 +26,16 @@ public class PositionHandler : MonoBehaviour
         {
             lapCounter.OnPassCheckpoint+= OnPassCheckpoint;
         }
-
-        leaderboardUIHandler = FindObjectOfType<LeaderboardUIHandler>();
-    }
-
-
-    void Start()
-    {
+        if(leaderboardUIHandler != null)
+        {
         leaderboardUIHandler.UpdateList(carLapCounters);
+
+        }
+        leaderboardUIHandler = FindObjectOfType<LeaderboardUIHandler>();
+
+
+
+        
     }
     void OnPassCheckpoint(CarLapCounter carLapCounter)
     {
@@ -37,8 +45,11 @@ public class PositionHandler : MonoBehaviour
 
        carLapCounter.SetCarPosition(carPostion);
 
-
+        if(leaderboardUIHandler != null)
+    {
         leaderboardUIHandler.UpdateList(carLapCounters);
+
+    }
 
 
        

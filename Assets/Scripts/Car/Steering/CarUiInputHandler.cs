@@ -20,7 +20,7 @@ public class CarUiInputHandler : MonoBehaviour
         foreach(CarInputHandler carInputHandler  in carInputHandlers)
         {
             {
-                if(carInputHandler.isUiInput)
+                if(carInputHandler.isUIInput)
                 {
                     playerCarInputHandler = carInputHandler;
                     break;

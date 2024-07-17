@@ -11,6 +11,12 @@ public class LeaderboardUIHandler : MonoBehaviour
 
     void Awake()
     {
+        
+
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         VerticalLayoutGroup leaderboardLayoutGroup = GetComponentInChildren<VerticalLayoutGroup>();
 
         CarLapCounter[] carLapCounterArray = FindObjectsOfType<CarLapCounter>();
@@ -28,12 +34,6 @@ public class LeaderboardUIHandler : MonoBehaviour
 
         }
 
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     public void UpdateList(List<CarLapCounter> lapCounters)

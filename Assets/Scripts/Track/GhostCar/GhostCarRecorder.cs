@@ -44,7 +44,7 @@ public class GhostCarRecorder : MonoBehaviour
 
         }
     
-    yield return new WaitForSeconds(0.01f);
+    yield return new WaitForSeconds(0.1f);
 
 
     }
