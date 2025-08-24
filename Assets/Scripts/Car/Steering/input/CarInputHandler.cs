@@ -36,24 +36,7 @@ public class CarInputHandler : MonoBehaviour
                     inputVector.x = Input.GetAxis("Horizontal");
                     inputVector.y = Input.GetAxis("Vertical");
                     break;
-                    
-                // FOR LOCAL MULTIPLAYER
-                /*
-                case 2:
-                    inputVector.x = Input.GetAxis("Horizontal_P2");
-                    inputVector.y = Input.GetAxis("Vertical_P2");
-                    break;
-
-                case 3:
-                    inputVector.x = Input.GetAxis("Horizontal_P3");
-                    inputVector.y = Input.GetAxis("Vertical_P3");
-                    break;
-
-                case 4:
-                    inputVector.x = Input.GetAxis("Horizontal_P4");
-                    inputVector.y = Input.GetAxis("Vertical_P4");
-                    break;
-                */
+             
             }
         }
 
