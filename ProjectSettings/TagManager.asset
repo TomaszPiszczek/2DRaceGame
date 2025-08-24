@@ -7,6 +7,7 @@ TagManager:
   - CheckPoint
   - PLayer
   - Jump
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

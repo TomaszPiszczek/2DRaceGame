@@ -41,21 +41,22 @@ public class TabGroup : MonoBehaviour
     public void OnTabSelected(TabButton button)
     {
         selectedTab = button;
-        ResetTabs();
-        button.background.sprite = tabActive;
+        foreach (TabButton tab in tabButtons)
+        {
+            if (tab == selectedTab)
+                tab.SetSelectedState();
+            else
+                tab.SetIdleState();
+        }
+
         int index = button.transform.GetSiblingIndex();
         for (int i = 0; i < objectsToSwap.Count; i++)
         {
-            if( i == index)
-            {
-                objectsToSwap[i].SetActive(true);
-            }
-            else
-            {
-                objectsToSwap[i].SetActive(false);
-            }
+            objectsToSwap[i].SetActive(i == index);
         }
     }
+
+
 
 
     public void ResetTabs()

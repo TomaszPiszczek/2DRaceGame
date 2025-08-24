@@ -1,111 +1,129 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class CarSFXHandler : MonoBehaviour
 {
-    [Header("Mixers")]
-    public AudioMixer audioMixer;
-
-    [Header("Audio sources")]
-    public AudioSource tiresScreeachingAudioSource;
+    [Header("Audio Sources")]
     public AudioSource engineAudioSource;
-    public AudioSource carHitAudioSource;
-    public AudioSource carJumpAudioSource;
-    public AudioSource carJumpLandingAudioSource;
+    public AudioSource tireScreechAudioSource;
+    public AudioSource jumpAudioSource;
+    public AudioSource landingAudioSource;
 
-    //Local variables
-    float desiredEnginePitch = 0.5f;
-    float tireScreechPitch = 0.5f;
+    [Header("Audio Clips")]
+    public AudioClip engineClip;
+    public AudioClip tireScreechClip;
+    public AudioClip jumpClip;
+    public AudioClip landingClip;
 
-    //Components
-    TopDownCarController topDownCarController;
+    private CarMovementHandler movementHandler;
+    private float desiredEnginePitch = 0.5f;
+    private float tireScratchTime = 0;
 
-    //Awake is called when the script instance is being loaded.
-    void Awake()
+    private void Awake()
     {
-        topDownCarController = GetComponentInParent<TopDownCarController>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Example for recording, move this part to any setting script that your game might use. 
-        //audioMixer.SetFloat("SFXVolume", 0.5f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateEngineSFX();
-        UpdateTiresScreechingSFX();
-    }
-
-    void UpdateEngineSFX()
-    {
-        //Handle engine SFX
-        float velocityMagnitude = topDownCarController.GetVelocityMagnitude();
-
-        //Increase the engine volume as the car goes faster
-        float desiredEngineVolume = velocityMagnitude * 0.05f;
-
-        //But keep a minimum level so it playes even if the car is idle
-        desiredEngineVolume = Mathf.Clamp(desiredEngineVolume, 0.2f, 1.0f);
-
-        engineAudioSource.volume = Mathf.Lerp(engineAudioSource.volume, desiredEngineVolume, Time.deltaTime * 10);
-
-        //To add more variation to the engine sound we also change the pitch
-        desiredEnginePitch = velocityMagnitude * 0.2f;
-        desiredEnginePitch = Mathf.Clamp(desiredEnginePitch, 0.5f, 2f);
-        engineAudioSource.pitch = Mathf.Lerp(engineAudioSource.pitch, desiredEnginePitch, Time.deltaTime * 1.5f);
-    }
-
-    void UpdateTiresScreechingSFX()
-    {
-        //Handle tire screeching SFX
-        if (topDownCarController.IsTireScreeching(out float lateralVelocity, out bool isBraking))
+        movementHandler = GetComponent<CarMovementHandler>();
+        
+        // Initialize audio sources if they're not assigned in the inspector
+        if (engineAudioSource == null)
         {
-            //If the car is braking we want the tire screech to be louder and also change the pitch.
-            if (isBraking)
-            {
-                tiresScreeachingAudioSource.volume = Mathf.Lerp(tiresScreeachingAudioSource.volume, 1.0f, Time.deltaTime * 10);
-                tireScreechPitch = Mathf.Lerp(tireScreechPitch, 0.5f, Time.deltaTime * 10);
-            }
-            else
-            {
-                //If we are not braking we still want to play this screech sound if the player is drifting.
-                tiresScreeachingAudioSource.volume = Mathf.Abs(lateralVelocity) * 0.05f;
-                tireScreechPitch = Mathf.Abs(lateralVelocity) * 0.1f;
-            }
+            engineAudioSource = gameObject.AddComponent<AudioSource>();
+            engineAudioSource.clip = engineClip;
+            engineAudioSource.loop = true;
+            engineAudioSource.playOnAwake = true;
+            engineAudioSource.Play();
         }
-        //Fade out the tire screech SFX if we are not screeching. 
-        else tiresScreeachingAudioSource.volume = Mathf.Lerp(tiresScreeachingAudioSource.volume, 0, Time.deltaTime * 10);
+
+        if (tireScreechAudioSource == null && tireScreechClip != null)
+        {
+            tireScreechAudioSource = gameObject.AddComponent<AudioSource>();
+            tireScreechAudioSource.clip = tireScreechClip;
+            tireScreechAudioSource.loop = true;
+            tireScreechAudioSource.playOnAwake = false;
+        }
+
+        if (jumpAudioSource == null && jumpClip != null)
+        {
+            jumpAudioSource = gameObject.AddComponent<AudioSource>();
+            jumpAudioSource.clip = jumpClip;
+            jumpAudioSource.loop = false;
+            jumpAudioSource.playOnAwake = false;
+        }
+
+        if (landingAudioSource == null && landingClip != null)
+        {
+            landingAudioSource = gameObject.AddComponent<AudioSource>();
+            landingAudioSource.clip = landingClip;
+            landingAudioSource.loop = false;
+            landingAudioSource.playOnAwake = false;
+        }
+    }
+
+    private void Update()
+    {
+        UpdateEngineSound();
+        UpdateTireScreechSound();
+    }
+
+    private void UpdateEngineSound()
+    {
+        // Get the car's velocity for pitch adjustment
+        float velocityMagnitude = movementHandler.GetVelocityMagnitude();
+
+        // Calculate the desired engine pitch based on the car's speed
+        desiredEnginePitch = 0.5f + velocityMagnitude * 0.025f;
+        
+        // Smoothly adjust the pitch
+        engineAudioSource.pitch = Mathf.Lerp(engineAudioSource.pitch, desiredEnginePitch, Time.deltaTime * 10);
+
+        // Volume can also be adjusted based on acceleration input
+        float accelerationInput = GetComponent<CarInputHandler>().GetAccelerationInput();
+        engineAudioSource.volume = 0.5f + Mathf.Abs(accelerationInput) * 0.5f;
+    }
+
+    private void UpdateTireScreechSound()
+    {
+        // Check if tires are screeching
+        bool isTireScreeching = movementHandler.IsTireScreeching(out float lateralVelocity, out bool isBraking);
+
+        // Adjust the volume and playing state based on the screeching intensity
+        if (isTireScreeching)
+        {
+            if (!tireScreechAudioSource.isPlaying)
+                tireScreechAudioSource.Play();
+
+            // Increase the volume of the screech based on the amount of sliding
+            tireScratchTime += Time.deltaTime;
+            float desiredVolume = Mathf.Abs(lateralVelocity) * 0.05f;
+            
+            // Braking should be louder
+            if (isBraking)
+                desiredVolume = 0.5f;
+
+            tireScreechAudioSource.volume = Mathf.Lerp(0.1f, desiredVolume, tireScratchTime * 2);
+        }
+        else
+        {
+            tireScratchTime = 0;
+            
+            if (tireScreechAudioSource.isPlaying)
+                tireScreechAudioSource.Stop();
+        }
     }
 
     public void PlayJumpSfx()
     {
-        carJumpAudioSource.Play();
+        if (jumpAudioSource != null && jumpClip != null)
+        {
+            jumpAudioSource.pitch = Random.Range(0.95f, 1.05f);
+            jumpAudioSource.Play();
+        }
     }
 
     public void PlayLandingSfx()
     {
-        carJumpLandingAudioSource.Play();
+        if (landingAudioSource != null && landingClip != null)
+        {
+            landingAudioSource.pitch = Random.Range(0.95f, 1.05f);
+            landingAudioSource.Play();
+        }
     }
-
-    void OnCollisionEnter2D(Collision2D collision2D)
-    {
-        //Get the relative velocity of the collision
-        float relativeVelocity = collision2D.relativeVelocity.magnitude;
-
-        float volume = relativeVelocity * 0.1f;
-
-        carHitAudioSource.pitch = Random.Range(0.95f, 1.05f);
-        carHitAudioSource.volume = volume;
-
-        if (!carHitAudioSource.isPlaying)
-            carHitAudioSource.Play();
-    }
-
-
 }
