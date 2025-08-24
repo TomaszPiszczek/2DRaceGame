@@ -73,3 +73,43 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 **/[Aa]ssets/[Ss]treamingAssets/aa.meta
 **/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Large asset files - Audio, Video, Images
+# Audio files
+*.wav
+*.mp3
+*.ogg
+*.aiff
+*.m4a
+
+# Large image files
+*.psd
+*.tiff
+*.tga
+*.exr
+*.hdr
+
+# Video files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Large 3D model files
+*.fbx
+*.blend
+*.max
+*.ma
+*.mb
+*.obj
+
+# IDE files
+**/.idea/
+*.iml
+*.approj
+
+# Large external packages (will be documented for manual download)
+**/Assets/Materials/kenney_racing-pack/
+**/Assets/Materials/TextMesh\ Pro/Examples\ \&\ Extras/
+**/Assets/Materials/Unity-UI-Rounded-Corners-master/Examples/
