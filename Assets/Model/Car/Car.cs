@@ -14,13 +14,15 @@ public class Car
     public Suspenssion Suspenssion; // used to calculate turn factor default 1.5
     public int Weight;  // Value in kgs
     public int Price;
+    public int Grip;    // 0-100 value for tire grip
+    public int Handling; // 0-100 value for car handling
     public int Tier;
 
 
 
    //public Sprite carImage; // Dodane pole obrazka
 
-    public Car(string Name, Engine Engine, Turbocharger Turbocharger, Tire Tire, Gearbox Gearbox, Suspenssion Suspenssion, int Weight, int Price,String pathToTopDownImage,int Tier)
+    public Car(string Name, Engine Engine, Turbocharger Turbocharger, Tire Tire, Gearbox Gearbox, Suspenssion Suspenssion, int Weight, int Price, int Grip, int Handling, String pathToTopDownImage, int Tier)
     {
         this.Name = Name;
         this.Weight = Weight;
@@ -30,6 +32,8 @@ public class Car
         this.Gearbox = Gearbox;
         this.Suspenssion = Suspenssion;
         this.Price = Price;
+        this.Grip = Grip;
+        this.Handling = Handling;
         this.pathToTopDownImage = pathToTopDownImage;
         this.Tier = Tier;
     } 
@@ -44,13 +48,19 @@ public class Car
     }
 
     //AVG 2
-    public double getTurnFactor(Suspenssion Suspenssion,int Weight){
-
-      return Suspenssion.TurnFactor + calculateTurnFactorBaseOnWeight(Weight);
+    public double getTurnFactor(Suspenssion Suspenssion,int Weight,int Handling){
+      double baseHandling = Suspenssion.TurnFactor + calculateTurnFactorBaseOnWeight(Weight);
+      double handlingModifier = (Handling - 50) / 100.0; // Scale handling from -0.5 to +0.5
+      return baseHandling + handlingModifier;
     }
     //AVG 0.95  CANT BE HIGHER THAN 0.99 LOWER THAN 0.93
-    public double getTireFriction(Tire Tire){
-      return Tire.Friction;
+    public double getTireFriction(Tire Tire, int Grip){
+      double baseFriction = Tire.Friction;
+      double gripModifier = (Grip - 50) / 1000.0; // Scale grip from -0.05 to +0.05
+      double finalFriction = baseFriction + gripModifier;
+      
+      // Ensure friction stays within bounds
+      return Math.Max(0.93, Math.Min(0.99, finalFriction));
     }
 
     
@@ -115,7 +125,9 @@ public class Car
     return 
            $"Weight: {Weight} kg\n" +
            $"Engine: {Engine.HorsePower}\n" +
-           $"Top Speed: {getTopSpeed(Gearbox, Engine, Turbocharger, Weight)*5} km/h\n";
+           $"Top Speed: {getTopSpeed(Gearbox, Engine, Turbocharger, Weight)*5} km/h\n" +
+           $"Grip: {Grip}\n" +
+           $"Handling: {Handling}\n";
 }
     
 }

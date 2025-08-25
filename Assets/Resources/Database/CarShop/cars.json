@@ -1,110 +1,128 @@
 {
         "cars": [{
-        "Name": "CarA1",
-        "Engine": { "Name": "EngineA1", "HorsePower": 450, "FuelConsuption": 15, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA1", "HpBoost": 100, "Tier": 0 },
-        "Tire": { "Name": "TireA1", "Type": "Soft", "Friction": 0.99, "Durability": 150, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA1", "TopSpeed": 350, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA1", "TurnFactor": 1.8, "Tier": 0 },
-        "Weight": 1200,
-        "Price": 50000,
-        "PathToTopDownImage": "path/to/imageA1",
+        "Name": "Porsche 911 Turbo",
+        "Engine": { "Name": "3.8L Twin-Turbo H6", "HorsePower": 640, "FuelConsuption": 15, "Tier": 0 },
+        "Turbocharger": { "Name": "Twin-Turbo System", "HpBoost": 100, "Tier": 0 },
+        "Tire": { "Name": "Michelin Pilot Sport Cup", "Type": "Soft", "Friction": 0.99, "Durability": 150, "Tier": 0 },
+        "Gearbox": { "Name": "8-Speed PDK", "TopSpeed": 330, "Tier": 0 },
+        "Suspenssion": { "Name": "PASM Adaptive", "TurnFactor": 1.8, "Tier": 0 },
+        "Weight": 1640,
+        "Price": 180000,
+        "pathToTopDownImage": "path/to/imageA1",
+        "Grip": 92,
+        "Handling": 95,
         "Tier": 0
         },
         {
-        "Name": "CarA2",
-        "Engine": { "Name": "EngineA2", "HorsePower": 470, "FuelConsuption": 16, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA2", "HpBoost": 110, "Tier": 0 },
-        "Tire": { "Name": "TireA2", "Type": "Medium", "Friction": 0.98, "Durability": 140, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA2", "TopSpeed": 360, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA2", "TurnFactor": 1.7, "Tier": 0 },
-        "Weight": 1250,
-        "Price": 52000,
-        "PathToTopDownImage": "path/to/imageA2",
+        "Name": "Ferrari 488 GTB",
+        "Engine": { "Name": "3.9L Twin-Turbo V8", "HorsePower": 670, "FuelConsuption": 16, "Tier": 0 },
+        "Turbocharger": { "Name": "Twin-Turbo V8", "HpBoost": 110, "Tier": 0 },
+        "Tire": { "Name": "Pirelli P Zero Corsa", "Type": "Medium", "Friction": 0.98, "Durability": 140, "Tier": 0 },
+        "Gearbox": { "Name": "7-Speed Dual-Clutch", "TopSpeed": 330, "Tier": 0 },
+        "Suspenssion": { "Name": "Ferrari Active Dampers", "TurnFactor": 1.7, "Tier": 0 },
+        "Weight": 1475,
+        "Price": 280000,
+        "pathToTopDownImage": "path/to/imageA2",
+        "Grip": 94,
+        "Handling": 97,
         "Tier": 0
         },
         {
-        "Name": "CarA3",
-        "Engine": { "Name": "EngineA3", "HorsePower": 500, "FuelConsuption": 18, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA3", "HpBoost": 120, "Tier": 0 },
-        "Tire": { "Name": "TireA3", "Type": "Soft", "Friction": 0.99, "Durability": 160, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA3", "TopSpeed": 370, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA3", "TurnFactor": 1.9, "Tier": 0 },
-        "Weight": 1180,
+        "Name": "McLaren 720S",
+        "Engine": { "Name": "4.0L Twin-Turbo V8", "HorsePower": 720, "FuelConsuption": 18, "Tier": 0 },
+        "Turbocharger": { "Name": "Twin-Scroll Turbo", "HpBoost": 120, "Tier": 0 },
+        "Tire": { "Name": "Pirelli P Zero Trofeo R", "Type": "Soft", "Friction": 0.99, "Durability": 160, "Tier": 0 },
+        "Gearbox": { "Name": "7-Speed SSG", "TopSpeed": 341, "Tier": 0 },
+        "Suspenssion": { "Name": "Adaptive Dampers", "TurnFactor": 1.9, "Tier": 0 },
+        "Weight": 1419,
+        "Price": 300000,
+        "pathToTopDownImage": "path/to/imageA3",
+        "Grip": 96,
+        "Handling": 98,
+        "Tier": 0
+        },
+        {
+        "Name": "Audi R8 V10 Plus",
+        "Engine": { "Name": "5.2L V10", "HorsePower": 610, "FuelConsuption": 17, "Tier": 0 },
+        "Turbocharger": { "Name": "Naturally Aspirated", "HpBoost": 115, "Tier": 0 },
+        "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Medium", "Friction": 0.97, "Durability": 145, "Tier": 0 },
+        "Gearbox": { "Name": "7-Speed S tronic", "TopSpeed": 330, "Tier": 0 },
+        "Suspenssion": { "Name": "Magnetic Ride", "TurnFactor": 1.85, "Tier": 0 },
+        "Weight": 1555,
+        "Price": 200000,
+        "pathToTopDownImage": "path/to/imageA4",
+        "Grip": 90,
+        "Handling": 93,
+        "Tier": 0
+        },
+        {
+        "Name": "BMW M8 Competition",
+        "Engine": { "Name": "4.4L Twin-Turbo V8", "HorsePower": 625, "FuelConsuption": 18, "Tier": 0 },
+        "Turbocharger": { "Name": "Twin-Turbo M Power", "HpBoost": 125, "Tier": 0 },
+        "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Soft", "Friction": 0.99, "Durability": 170, "Tier": 0 },
+        "Gearbox": { "Name": "8-Speed M Steptronic", "TopSpeed": 305, "Tier": 0 },
+        "Suspenssion": { "Name": "M Adaptive Suspension", "TurnFactor": 1.9, "Tier": 0 },
+        "Weight": 1855,
+        "Price": 150000,
+        "pathToTopDownImage": "path/to/imageA5",
+        "Grip": 88,
+        "Handling": 91,
+        "Tier": 0
+        },
+        {
+        "Name": "Mercedes-AMG GT R",
+        "Engine": { "Name": "4.0L Twin-Turbo V8", "HorsePower": 585, "FuelConsuption": 16, "Tier": 0 },
+        "Turbocharger": { "Name": "AMG Twin-Turbo", "HpBoost": 105, "Tier": 0 },
+        "Tire": { "Name": "Michelin Pilot Sport Cup 2", "Type": "Medium", "Friction": 0.98, "Durability": 155, "Tier": 0 },
+        "Gearbox": { "Name": "7-Speed AMG DCT", "TopSpeed": 318, "Tier": 0 },
+        "Suspenssion": { "Name": "AMG Ride Control", "TurnFactor": 1.8, "Tier": 0 },
+        "Weight": 1630,
+        "Price": 160000,
+        "pathToTopDownImage": "path/to/imageA6",
+        "Grip": 89,
+        "Handling": 94,
+        "Tier": 0
+        },
+        {
+        "Name": "BMW M3 Competition",
+        "Engine": { "Name": "3.0L Twin-Turbo I6", "HorsePower": 510, "FuelConsuption": 17, "Tier": 0 },
+        "Turbocharger": { "Name": "Twin-Turbo S58", "HpBoost": 110, "Tier": 0 },
+        "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Soft", "Friction": 0.99, "Durability": 160, "Tier": 0 },
+        "Gearbox": { "Name": "8-Speed M Steptronic", "TopSpeed": 290, "Tier": 0 },
+        "Suspenssion": { "Name": "M Adaptive Suspension", "TurnFactor": 1.85, "Tier": 0 },
+        "Weight": 1730,
+        "Price": 75000,
+        "pathToTopDownImage": "path/to/imageA7",
+        "Grip": 85,
+        "Handling": 89,
+        "Tier": 0
+        },
+        {
+        "Name": "Porsche 911 GT3",
+        "Engine": { "Name": "4.0L Naturally Aspirated H6", "HorsePower": 502, "FuelConsuption": 18, "Tier": 0 },
+        "Turbocharger": { "Name": "Naturally Aspirated", "HpBoost": 120, "Tier": 0 },
+        "Tire": { "Name": "Michelin Pilot Sport Cup 2", "Type": "Medium", "Friction": 0.98, "Durability": 165, "Tier": 0 },
+        "Gearbox": { "Name": "7-Speed PDK", "TopSpeed": 318, "Tier": 0 },
+        "Suspenssion": { "Name": "PASM Sport", "TurnFactor": 1.9, "Tier": 0 },
+        "Weight": 1435,
+        "Price": 170000,
+        "pathToTopDownImage": "path/to/imageA8",
+        "Grip": 97,
+        "Handling": 99,
+        "Tier": 0
+        },
+        {
+        "Name": "Mercedes-AMG A45 S",
+        "Engine": { "Name": "2.0L Turbo I4", "HorsePower": 421, "FuelConsuption": 17, "Tier": 0 },
+        "Turbocharger": { "Name": "Single Turbo AMG", "HpBoost": 115, "Tier": 0 },
+        "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Soft", "Friction": 0.99, "Durability": 150, "Tier": 0 },
+        "Gearbox": { "Name": "8-Speed AMG DCT", "TopSpeed": 270, "Tier": 0 },
+        "Suspenssion": { "Name": "AMG Ride Control", "TurnFactor": 1.8, "Tier": 0 },
+        "Weight": 1625,
         "Price": 55000,
-        "PathToTopDownImage": "path/to/imageA3",
-        "Tier": 0
-        },
-        {
-        "Name": "CarA4",
-        "Engine": { "Name": "EngineA4", "HorsePower": 480, "FuelConsuption": 17, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA4", "HpBoost": 115, "Tier": 0 },
-        "Tire": { "Name": "TireA4", "Type": "Medium", "Friction": 0.97, "Durability": 145, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA4", "TopSpeed": 355, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA4", "TurnFactor": 1.85, "Tier": 0 },
-        "Weight": 1220,
-        "Price": 51000,
-        "PathToTopDownImage": "path/to/imageA4",
-        "Tier": 0
-        },
-        {
-        "Name": "CarA5",
-        "Engine": { "Name": "EngineA5", "HorsePower": 490, "FuelConsuption": 18, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA5", "HpBoost": 125, "Tier": 0 },
-        "Tire": { "Name": "TireA5", "Type": "Soft", "Friction": 0.99, "Durability": 170, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA5", "TopSpeed": 365, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA5", "TurnFactor": 1.9, "Tier": 0 },
-        "Weight": 1190,
-        "Price": 54000,
-        "PathToTopDownImage": "path/to/imageA5",
-        "Tier": 0
-        },
-        {
-        "Name": "CarA6",
-        "Engine": { "Name": "EngineA6", "HorsePower": 460, "FuelConsuption": 16, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA6", "HpBoost": 105, "Tier": 0 },
-        "Tire": { "Name": "TireA6", "Type": "Medium", "Friction": 0.98, "Durability": 155, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA6", "TopSpeed": 350, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA6", "TurnFactor": 1.8, "Tier": 0 },
-        "Weight": 1210,
-        "Price": 53000,
-        "PathToTopDownImage": "path/to/imageA6",
-        "Tier": 0
-        },
-        {
-        "Name": "CarA7",
-        "Engine": { "Name": "EngineA7", "HorsePower": 475, "FuelConsuption": 17, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA7", "HpBoost": 110, "Tier": 0 },
-        "Tire": { "Name": "TireA7", "Type": "Soft", "Friction": 0.99, "Durability": 160, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA7", "TopSpeed": 360, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA7", "TurnFactor": 1.85, "Tier": 0 },
-        "Weight": 1170,
-        "Price": 52000,
-        "PathToTopDownImage": "path/to/imageA7",
-        "Tier": 0
-        },
-        {
-        "Name": "CarA8",
-        "Engine": { "Name": "EngineA8", "HorsePower": 495, "FuelConsuption": 18, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA8", "HpBoost": 120, "Tier": 0 },
-        "Tire": { "Name": "TireA8", "Type": "Medium", "Friction": 0.98, "Durability": 165, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA8", "TopSpeed": 370, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA8", "TurnFactor": 1.9, "Tier": 0 },
-        "Weight": 1160,
-        "Price": 56000,
-        "PathToTopDownImage": "path/to/imageA8",
-        "Tier": 0
-        },
-        {
-        "Name": "CarA9",
-        "Engine": { "Name": "EngineA9", "HorsePower": 485, "FuelConsuption": 17, "Tier": 0 },
-        "Turbocharger": { "Name": "TurboA9", "HpBoost": 115, "Tier": 0 },
-        "Tire": { "Name": "TireA9", "Type": "Soft", "Friction": 0.99, "Durability": 150, "Tier": 0 },
-        "Gearbox": { "Name": "GearboxA9", "TopSpeed": 355, "Tier": 0 },
-        "Suspenssion": { "Name": "SuspensionA9", "TurnFactor": 1.8, "Tier": 0 },
-        "Weight": 1180,
-        "Price": 55000,
-        "PathToTopDownImage": "path/to/imageA9",
+        "pathToTopDownImage": "path/to/imageA9",
+        "Grip": 83,
+        "Handling": 86,
         "Tier": 0
         },
         {
@@ -116,7 +134,9 @@
         "Suspenssion": { "Name": "SuspensionB1", "TurnFactor": 1.6, "Tier": 1 },
         "Weight": 1300,
         "Price": 30000,
-        "PathToTopDownImage": "path/to/imageB1",
+        "pathToTopDownImage": "path/to/imageB1",
+        "Grip": 68,
+        "Handling": 65,
         "Tier": 1
         },
         {
@@ -128,7 +148,9 @@
         "Suspenssion": { "Name": "SuspensionB2", "TurnFactor": 1.65, "Tier": 1 },
         "Weight": 1350,
         "Price": 32000,
-        "PathToTopDownImage": "path/to/imageB2",
+        "pathToTopDownImage": "path/to/imageB2",
+        "Grip": 71,
+        "Handling": 67,
         "Tier": 1
         },
         {
@@ -140,7 +162,9 @@
         "Suspenssion": { "Name": "SuspensionB3", "TurnFactor": 1.7, "Tier": 1 },
         "Weight": 1320,
         "Price": 34000,
-        "PathToTopDownImage": "path/to/imageB3",
+        "pathToTopDownImage": "path/to/imageB3",
+        "Grip": 74,
+        "Handling": 70,
         "Tier": 1
         },
         {
@@ -152,7 +176,9 @@
         "Suspenssion": { "Name": "SuspensionB4", "TurnFactor": 1.6, "Tier": 1 },
         "Weight": 1280,
         "Price": 31000,
-        "PathToTopDownImage": "path/to/imageB4",
+        "pathToTopDownImage": "path/to/imageB4",
+        "Grip": 69,
+        "Handling": 64,
         "Tier": 1
         },
         {
@@ -164,7 +190,9 @@
         "Suspenssion": { "Name": "SuspensionB5", "TurnFactor": 1.7, "Tier": 1 },
         "Weight": 1330,
         "Price": 35000,
-        "PathToTopDownImage": "path/to/imageB5",
+        "pathToTopDownImage": "path/to/imageB5",
+        "Grip": 76,
+        "Handling": 72,
         "Tier": 1
         },
         {
@@ -176,7 +204,9 @@
         "Suspenssion": { "Name": "SuspensionB6", "TurnFactor": 1.65, "Tier": 1 },
         "Weight": 1270,
         "Price": 33000,
-        "PathToTopDownImage": "path/to/imageB6",
+        "pathToTopDownImage": "path/to/imageB6",
+        "Grip": 72,
+        "Handling": 68,
         "Tier": 1
         },
         {
@@ -188,7 +218,9 @@
         "Suspenssion": { "Name": "SuspensionB7", "TurnFactor": 1.7, "Tier": 1 },
         "Weight": 1290,
         "Price": 34000,
-        "PathToTopDownImage": "path/to/imageB7",
+        "pathToTopDownImage": "path/to/imageB7",
+        "Grip": 73,
+        "Handling": 69,
         "Tier": 1
         },
         {
@@ -200,7 +232,9 @@
         "Suspenssion": { "Name": "SuspensionB8", "TurnFactor": 1.75, "Tier": 1 },
         "Weight": 1310,
         "Price": 35000,
-        "PathToTopDownImage": "path/to/imageB8",
+        "pathToTopDownImage": "path/to/imageB8",
+        "Grip": 75,
+        "Handling": 73,
         "Tier": 1
         },
         {
@@ -212,7 +246,9 @@
         "Suspenssion": { "Name": "SuspensionB9", "TurnFactor": 1.8, "Tier": 1 },
         "Weight": 1340,
         "Price": 36000,
-        "PathToTopDownImage": "path/to/imageB9",
+        "pathToTopDownImage": "path/to/imageB9",
+        "Grip": 77,
+        "Handling": 74,
         "Tier": 1
         },
         {
@@ -224,7 +260,9 @@
         "Suspenssion": { "Name": "SuspensionC1", "TurnFactor": 1.2, "Tier": 2 },
         "Weight": 1500,
         "Price": 15000,
-        "PathToTopDownImage": "path/to/imageC1",
+        "pathToTopDownImage": "path/to/imageC1",
+        "Grip": 45,
+        "Handling": 42,
         "Tier": 2
         },
         {
@@ -236,7 +274,9 @@
         "Suspenssion": { "Name": "SuspensionC2", "TurnFactor": 1.25, "Tier": 2 },
         "Weight": 1550,
         "Price": 16000,
-        "PathToTopDownImage": "path/to/imageC2",
+        "pathToTopDownImage": "path/to/imageC2",
+        "Grip": 48,
+        "Handling": 46,
         "Tier": 2
         },
         {
@@ -248,7 +288,9 @@
         "Suspenssion": { "Name": "SuspensionC3", "TurnFactor": 1.3, "Tier": 2 },
         "Weight": 1530,
         "Price": 17000,
-        "PathToTopDownImage": "path/to/imageC3",
+        "pathToTopDownImage": "path/to/imageC3",
+        "Grip": 52,
+        "Handling": 49,
         "Tier": 2
         },
         {
@@ -260,7 +302,9 @@
         "Suspenssion": { "Name": "SuspensionC4", "TurnFactor": 1.2, "Tier": 2 },
         "Weight": 1570,
         "Price": 16500,
-        "PathToTopDownImage": "path/to/imageC4",
+        "pathToTopDownImage": "path/to/imageC4",
+        "Grip": 47,
+        "Handling": 44,
         "Tier": 2
         },
         {
@@ -272,7 +316,9 @@
         "Suspenssion": { "Name": "SuspensionC5", "TurnFactor": 1.25, "Tier": 2 },
         "Weight": 1540,
         "Price": 16800,
-        "PathToTopDownImage": "path/to/imageC5",
+        "pathToTopDownImage": "path/to/imageC5",
+        "Grip": 50,
+        "Handling": 47,
         "Tier": 2
         },
         {
@@ -284,7 +330,9 @@
         "Suspenssion": { "Name": "SuspensionC6", "TurnFactor": 1.2, "Tier": 2 },
         "Weight": 1590,
         "Price": 15500,
-        "PathToTopDownImage": "path/to/imageC6",
+        "pathToTopDownImage": "path/to/imageC6",
+        "Grip": 44,
+        "Handling": 41,
         "Tier": 2
         },
         {
@@ -296,7 +344,9 @@
         "Suspenssion": { "Name": "SuspensionC7", "TurnFactor": 1.3, "Tier": 2 },
         "Weight": 1500,
         "Price": 17500,
-        "PathToTopDownImage": "path/to/imageC7",
+        "pathToTopDownImage": "path/to/imageC7",
+        "Grip": 54,
+        "Handling": 51,
         "Tier": 2
         },
         {
@@ -308,7 +358,9 @@
         "Suspenssion": { "Name": "SuspensionC8", "TurnFactor": 1.25, "Tier": 2 },
         "Weight": 1580,
         "Price": 16900,
-        "PathToTopDownImage": "path/to/imageC8",
+        "pathToTopDownImage": "path/to/imageC8",
+        "Grip": 49,
+        "Handling": 46,
         "Tier": 2
         },
         {
@@ -320,7 +372,9 @@
         "Suspenssion": { "Name": "SuspensionC9", "TurnFactor": 1.3, "Tier": 2 },
         "Weight": 1520,
         "Price": 17200,
-        "PathToTopDownImage": "path/to/imageC9",
+        "pathToTopDownImage": "path/to/imageC9",
+        "Grip": 53,
+        "Handling": 50,
         "Tier": 2
         }
         ]
