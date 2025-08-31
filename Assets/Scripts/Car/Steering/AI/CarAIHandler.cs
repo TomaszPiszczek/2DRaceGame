@@ -56,6 +56,12 @@ public class CarAIHandler : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!RaceManager.IsRaceActive)
+        {
+            topDownCarController.SetInputVector(Vector2.zero);
+            return;
+        }
+        
         Vector2 inputVector = Vector2.zero;
 
         // Update target based on current AI mode

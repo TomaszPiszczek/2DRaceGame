@@ -642,6 +642,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.52, y: 0.36}
   m_EdgeRadius: 0
+--- !u!82 &19164230 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6541671093337856875, guid: 45a5f126f9aa0f643998be0e8b19c058,
+    type: 3}
+  m_PrefabInstance: {fileID: 376681832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &20047479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4592,18 +4598,6 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 394047597}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &224034240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224034227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ccc8333126708442ad6d099f435b482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &231008743
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,8 +6198,23 @@ PrefabInstance:
     - target: {fileID: 1815413831101370756, guid: 45a5f126f9aa0f643998be0e8b19c058,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1815413831101370756, guid: 45a5f126f9aa0f643998be0e8b19c058,
+        type: 3}
+      propertyPath: carHitAudioSource
+      value: 
+      objectReference: {fileID: 19164230}
+    - target: {fileID: 1815413831101370756, guid: 45a5f126f9aa0f643998be0e8b19c058,
+        type: 3}
+      propertyPath: carJumpAudioSource
+      value: 
+      objectReference: {fileID: 19164230}
+    - target: {fileID: 1815413831101370756, guid: 45a5f126f9aa0f643998be0e8b19c058,
+        type: 3}
+      propertyPath: carJumpLandingAudioSource
+      value: 
+      objectReference: {fileID: 19164230}
     - target: {fileID: 1815413831101370756, guid: 45a5f126f9aa0f643998be0e8b19c058,
         type: 3}
       propertyPath: tiresScreeachingAudioSource
@@ -6502,17 +6511,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 104227115402413108, guid: 45a5f126f9aa0f643998be0e8b19c058, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5277956499462266638, guid: 45a5f126f9aa0f643998be0e8b19c058,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 376681845}
-    - targetCorrespondingSourceObject: {fileID: 5277956499462266638, guid: 45a5f126f9aa0f643998be0e8b19c058,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 376681855}
   m_SourcePrefab: {fileID: 100100000, guid: 45a5f126f9aa0f643998be0e8b19c058, type: 3}
 --- !u!4 &376681833 stripped
 Transform:
@@ -6585,18 +6591,6 @@ MonoBehaviour:
     m_Bits: 256
   carSpriteRenderer: {fileID: 376681844}
   carShadowRenderer: {fileID: 2074125694}
---- !u!114 &376681855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376681834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ccc8333126708442ad6d099f435b482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &393860538
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,15 +6739,35 @@ PrefabInstance:
       propertyPath: skillLevel
       value: 0.92
       objectReference: {fileID: 0}
+    - target: {fileID: 5024408904685145575, guid: b49976a74cd74c44da9dd567533dede3,
+        type: 3}
+      propertyPath: carHitAudioSource
+      value: 
+      objectReference: {fileID: 19164230}
+    - target: {fileID: 5024408904685145575, guid: b49976a74cd74c44da9dd567533dede3,
+        type: 3}
+      propertyPath: carJumpAudioSource
+      value: 
+      objectReference: {fileID: 19164230}
+    - target: {fileID: 5024408904685145575, guid: b49976a74cd74c44da9dd567533dede3,
+        type: 3}
+      propertyPath: carJumpLandingAudioSource
+      value: 
+      objectReference: {fileID: 19164230}
+    - target: {fileID: 5024408904685145575, guid: b49976a74cd74c44da9dd567533dede3,
+        type: 3}
+      propertyPath: tiresScreeachingAudioSource
+      value: 
+      objectReference: {fileID: 19164230}
     - target: {fileID: 6380520523530494336, guid: b49976a74cd74c44da9dd567533dede3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.58
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6380520523530494336, guid: b49976a74cd74c44da9dd567533dede3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.38
+      value: -4.26
       objectReference: {fileID: 0}
     - target: {fileID: 6380520523530494336, guid: b49976a74cd74c44da9dd567533dede3,
         type: 3}
@@ -6800,18 +6814,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICAR (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8963790980682422079, guid: b49976a74cd74c44da9dd567533dede3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 882986345695318558, guid: b49976a74cd74c44da9dd567533dede3, type: 3}
+    - {fileID: 6693839229841247013, guid: b49976a74cd74c44da9dd567533dede3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8522195251537440468, guid: b49976a74cd74c44da9dd567533dede3,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 224034229}
-    - targetCorrespondingSourceObject: {fileID: 8522195251537440468, guid: b49976a74cd74c44da9dd567533dede3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 224034240}
   m_SourcePrefab: {fileID: 100100000, guid: b49976a74cd74c44da9dd567533dede3, type: 3}
 --- !u!1 &398398991
 GameObject:
@@ -15837,6 +15854,7 @@ MonoBehaviour:
   countdownText: {fileID: 398706700}
   leaderboardUIHandler: {fileID: 1017510189}
   continueButton: {fileID: 873041834}
+  mainMenuScene: {fileID: 102900000, guid: 03543bd1130c4fb499197a916bc80b92, type: 3}
 --- !u!1 &963192871
 GameObject:
   m_ObjectHideFlags: 0
@@ -16540,6 +16558,7 @@ MonoBehaviour:
   raceFinishedUI: {fileID: 1573575928}
   finalPositionText: {fileID: 1976799024}
   rewardText: {fileID: 806695501}
+  continueButton: {fileID: 0}
 --- !u!1 &1035614369
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,12 @@ public class CarInputHandler : MonoBehaviour
     // Update is called once per frame and is frame dependent
     void Update()
     {
+        if (!RaceManager.IsRaceActive)
+        {
+            topDownCarController.SetInputVector(Vector2.zero);
+            return;
+        }
+        
         if (isUIInput)
         {
             // Handle UI input if needed

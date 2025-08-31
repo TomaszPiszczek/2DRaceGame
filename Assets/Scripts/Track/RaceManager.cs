@@ -84,9 +84,19 @@ public class RaceManager : MonoBehaviour
         Debug.Log($"Player finished race in position {position} with time {FormatTime(totalTime)}");
     }
     
+    [Header("Scene Configuration")]
+    public Object mainMenuScene;
+    
     public void ReturnToMainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        if (mainMenuScene != null)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(mainMenuScene.name);
+        }
+        else
+        {
+            Debug.LogError("Main Menu scene not assigned in RaceManager!");
+        }
     }
     
     private int CalculatePrizeMoney(int position)

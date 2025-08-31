@@ -10,6 +10,7 @@ public class LeaderboardUIHandler : MonoBehaviour
     public GameObject raceFinishedUI;
     public TMP_Text finalPositionText;
     public TMP_Text rewardText;
+    public Button continueButton;
     
     SetLeaderboardItemInfo[] setLeaderboardItemInfo;
 
@@ -71,6 +72,18 @@ public class LeaderboardUIHandler : MonoBehaviour
             if (rewardText != null)
             {
                 rewardText.text = $"Reward: ${reward:N0}";
+            }
+            
+            if (continueButton != null)
+            {
+                continueButton.onClick.RemoveAllListeners();
+                continueButton.onClick.AddListener(() => {
+                    RaceManager raceManager = FindObjectOfType<RaceManager>();
+                    if (raceManager != null)
+                    {
+                        raceManager.ReturnToMainMenu();
+                    }
+                });
             }
         }
     }
