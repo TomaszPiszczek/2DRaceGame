@@ -67,12 +67,12 @@ public class GarageManager : MonoBehaviour
             selectButton.colors = colors;
         }
         
-        Image carImage = slot.GetComponentsInChildren<Image>()[1];
-        if (carImage && !string.IsNullOrEmpty(car.pathToTopDownImage))
-        {
-            Sprite carSprite = Resources.Load<Sprite>(car.pathToTopDownImage);
-            if (carSprite) carImage.sprite = carSprite;
-        }
+        // Image carImage = slot.GetComponentsInChildren<Image>()[1];
+        // if (carImage && !string.IsNullOrEmpty(car.pathToTopDownImage))
+        // {
+        //     Sprite carSprite = Resources.Load<Sprite>(car.pathToTopDownImage);
+        //     if (carSprite) carImage.sprite = carSprite;
+        // }
     }
     
     private void SelectCar(int carIndex)
