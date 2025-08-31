@@ -6,20 +6,26 @@ using UnityEngine;
 
 public class CarLapCounter : MonoBehaviour
 {
-
     public TextMeshProUGUI carPostionText;
-    int passedCheckPointNumber =0;
+    public TextMeshProUGUI lapCounterText;
+    
+    int passedCheckPointNumber = 0;
     float timeAtLastPassedCheckPoint;
-
-    int numberOfPassedCheckpoints =0;
-
-
-    int lapsCompleted =0;
-    const int lapsToComplete =3;
-
-    int carPostion = 0;
+    float raceStartTime;
+    
+    int numberOfPassedCheckpoints = 0;
+    int lapsCompleted = 0;
+    const int lapsToComplete = 3;
+    public int carPostion = 0;
+    
+    public float[] lapTimes = new float[3];
+    public float totalRaceTime = 0f;
+    public bool isRaceFinished = false;
+    public bool isPlayerCar = false;
 
     public event Action<CarLapCounter> OnPassCheckpoint;
+    public event Action<CarLapCounter> OnLapCompleted;
+    public event Action<CarLapCounter> OnRaceFinished;
 
     IEnumerator ShowPostionCO(float delayUntilGHidePostion)
     {
@@ -44,45 +50,83 @@ public class CarLapCounter : MonoBehaviour
     {
         return timeAtLastPassedCheckPoint;
     }
-        void OnTriggerEnter2D(Collider2D colider) {
+        private void Start()
+    {
+        raceStartTime = Time.time;
+        UpdateLapDisplay();
+    }
+    
+    void OnTriggerEnter2D(Collider2D colider) 
+    {
         if (colider.CompareTag("CheckPoint"))
         {
             CheckPoint checkPoint = colider.GetComponent<CheckPoint>();
 
-            if(passedCheckPointNumber +1 == checkPoint.checkPointNumber)
+            if(passedCheckPointNumber + 1 == checkPoint.checkPointNumber)
             {
-                passedCheckPointNumber  = checkPoint.checkPointNumber;
-
+                passedCheckPointNumber = checkPoint.checkPointNumber;
                 numberOfPassedCheckpoints++;
-
                 timeAtLastPassedCheckPoint = Time.time;
-
 
                 if(checkPoint.isFinsihLine)
                 {
-                    passedCheckPointNumber=0;
+                    passedCheckPointNumber = 0;
                     lapsCompleted++;
+                    
+                    float lapTime = Time.time - (lapsCompleted == 1 ? raceStartTime : timeAtLastPassedCheckPoint - lapTimes[lapsCompleted - 2]);
+                    if (lapsCompleted <= 3)
+                    {
+                        lapTimes[lapsCompleted - 1] = lapTime;
+                    }
+                    
+                    UpdateLapDisplay();
+                    OnLapCompleted?.Invoke(this);
+                    
+                    Debug.Log($"{gameObject.name} completed lap {lapsCompleted} in {lapTime:F2}s");
                 }
-                if(lapsCompleted > lapsToComplete){
-                    Debug.Log("FISNISH");
-                   
+
+                if(lapsCompleted >= lapsToComplete && !isRaceFinished)
+                {
+                    isRaceFinished = true;
+                    totalRaceTime = Time.time - raceStartTime;
+                    Debug.Log($"{gameObject.name} FINISHED RACE! Total time: {totalRaceTime:F2}s");
+                    OnRaceFinished?.Invoke(this);
                 }
 
                 OnPassCheckpoint?.Invoke(this);
 
-               if(lapsCompleted > lapsToComplete)
-               {
+                if(isRaceFinished)
+                {
                     StartCoroutine(ShowPostionCO(100));
-               }
+                }
                 else
                 {
                     StartCoroutine(ShowPostionCO(1.5f));
                 }
-                
-                
-
-
             }
         }
+    }
+    
+    private void UpdateLapDisplay()
+    {
+        if (lapCounterText != null)
+        {
+            lapCounterText.text = $"Lap: {lapsCompleted}/{lapsToComplete}";
+        }
+    }
+    
+    public int GetLapsCompleted()
+    {
+        return lapsCompleted;
+    }
+    
+    public float GetBestLapTime()
+    {
+        float best = float.MaxValue;
+        for (int i = 0; i < lapsCompleted && i < lapTimes.Length; i++)
+        {
+            if (lapTimes[i] < best) best = lapTimes[i];
+        }
+        return best == float.MaxValue ? 0f : best;
     }
 }

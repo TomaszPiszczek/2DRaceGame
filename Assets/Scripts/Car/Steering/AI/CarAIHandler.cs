@@ -150,7 +150,7 @@ public class CarAIHandler : MonoBehaviour
     {
         if (topDownCarController.GetVelocityMagnitude() > maxSpeed)
         {
-            Debug.Log("Returning " + maxSpeed + " magnitude" + topDownCarController.GetVelocityMagnitude());
+           // Debug.Log("Returning " + maxSpeed + " magnitude" + topDownCarController.GetVelocityMagnitude());
             return 0;
         }
 
