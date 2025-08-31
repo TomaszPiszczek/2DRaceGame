@@ -14,7 +14,7 @@ public static class CarShopList
 
     private static void loadCarsFromJson()
     {
-        TextAsset jsonTextAsset = Resources.Load<TextAsset>("Database/CarShop/cars");
+        TextAsset jsonTextAsset = Resources.Load<TextAsset>("Database/cars");
         if (jsonTextAsset != null)
         {
             cars = JsonUtility.FromJson<CarsWrapper>(jsonTextAsset.text).cars;
