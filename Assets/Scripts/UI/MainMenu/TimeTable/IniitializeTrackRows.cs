@@ -11,11 +11,11 @@ public class InitializeTrackRows : MonoBehaviour
 
     void Start()
     {
-        List<TrackSchedule> tracks = GenerateSeasonSchedule.GetTrackSchedules();
-        foreach (TrackSchedule trackSchedule in tracks)
-        {
-            AddTrackRow(trackSchedule);
-        }
+        // List<TrackSchedule> tracks = GenerateSeasonSchedule.GetTrackSchedules();
+        // foreach (TrackSchedule trackSchedule in tracks)
+        // {
+        //     AddTrackRow(trackSchedule);
+        // }
     }
 
     void AddTrackRow(TrackSchedule trackSchedule)
