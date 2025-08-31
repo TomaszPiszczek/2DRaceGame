@@ -1,0 +1,100 @@
+{
+    "raceResults": [
+        {
+            "Week": 1,
+            "Position": 3,
+            "Revenue": 15000,
+            "Map": "Monaco ",
+            "Car": "Porsche",
+            "Time": "2:45.231"
+        },
+        {
+            "Week": 2,
+            "Position": 1,
+            "Revenue": 25000,
+            "Map": "Silverstone",
+            "Car": "Ferrari",
+            "Time": "2:12.456"
+        },
+        {
+            "Week": 3,
+            "Position": 5,
+            "Revenue": 8000,
+            "Map": "Nurburgring",
+            "Car": "BMW",
+            "Time": "3:18.789"
+        },
+        {
+            "Week": 4,
+            "Position": 2,
+            "Revenue": 20000,
+            "Map": "Spa",
+            "Car": "McLaren",
+            "Time": "2:28.123"
+        },
+        {
+            "Week": 5,
+            "Position": 4,
+            "Revenue": 12000,
+            "Map": "Monza",
+            "Car": "Audi R8",
+            "Time": "2:52.667"
+        },
+        {
+            "Week": 6,
+            "Position": 1,
+            "Revenue": 30000,
+            "Map": "Suzuka",
+            "Car": "Porsche ",
+            "Time": "2:05.432"
+        },
+        {
+            "Week": 7,
+            "Position": 6,
+            "Revenue": 6000,
+            "Map": "Laguna",
+            "Car": "Mercedes-AMG",
+            "Time": "2:58.901"
+        },
+        {
+            "Week": 8,
+            "Position": 2,
+            "Revenue": 22000,
+            "Map": "Circuite",
+            "Car": "BMW M8",
+            "Time": "4:12.345"
+        },
+        {
+            "Week": 9,
+            "Position": 3,
+            "Revenue": 16000,
+            "Map": "Brands Hatch",
+            "Car": "Mercedes-AMG ",
+            "Time": "2:34.789"
+        },
+        {
+            "Week": 10,
+            "Position": 1,
+            "Revenue": 35000,
+            "Map": "Imola",
+            "Car": "Ferrari 488",
+            "Time": "2:18.567"
+        },
+        {
+            "Week": 11,
+            "Position": 2,
+            "Revenue": 35000,
+            "Map": "Imola",
+            "Car": "Ferrari 488",
+            "Time": "2:18.567"
+        },
+        {
+            "Week": 12,
+            "Position": 4,
+            "Revenue": 35000,
+            "Map": "Imola",
+            "Car": "Ferrari 488",
+            "Time": "2:18.567"
+        }
+    ]
+}
