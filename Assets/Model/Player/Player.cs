@@ -9,11 +9,13 @@ public class Player
 
     public Garage garage;
     public int money;
+    public int currentCarIndex = -1;
 
     public Player(int money, Garage garage)
     {
         this.money = money;
         this.garage = garage;
+        this.currentCarIndex = -1;
         Instance = this;
     }
 }

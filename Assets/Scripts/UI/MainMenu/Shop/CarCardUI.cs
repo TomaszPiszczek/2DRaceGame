@@ -80,6 +80,7 @@ public class CarCardUI : MonoBehaviour
         {
             buyButton.onClick.RemoveAllListeners();
             buyButton.onClick.AddListener(OnBuyPressed);
+            UpdateButtonState();
         }
 
         // Make sliders look like your orange bars:
@@ -92,6 +93,46 @@ public class CarCardUI : MonoBehaviour
     private void OnBuyPressed()
     {
         Debug.Log($"Buy {data?.Name} for {data?.Price}");
-        // TODO: Hook into your currency/garage systems.
+        
+        if (data == null)
+        {
+            Debug.LogError("No car data to purchase!");
+            return;
+        }
+        
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager not found!");
+            return;
+        }
+        
+        if (GameManager.Instance.BuyCar(data))
+        {
+            UpdateButtonState();
+        }
+    }
+    
+    private void UpdateButtonState()
+    {
+        if (buyButton == null || data == null || GameManager.Instance == null) return;
+        
+        bool canAfford = GameManager.Instance.CanAffordCar(data);
+        bool alreadyOwned = GameManager.Instance.OwnsCarAlready(data);
+        
+        if (alreadyOwned)
+        {
+            buyButton.interactable = false;
+            buyButton.GetComponentInChildren<TMPro.TMP_Text>().text = "OWNED";
+        }
+        else if (!canAfford)
+        {
+            buyButton.interactable = false;
+            buyButton.GetComponentInChildren<TMPro.TMP_Text>().text = "TOO EXPENSIVE";
+        }
+        else
+        {
+            buyButton.interactable = true;
+            buyButton.GetComponentInChildren<TMPro.TMP_Text>().text = "BUY";
+        }
     }
 }
