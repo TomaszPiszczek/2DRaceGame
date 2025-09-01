@@ -127,7 +127,7 @@ public class CarCardUI : MonoBehaviour
         else if (!canAfford)
         {
             buyButton.interactable = false;
-            buyButton.GetComponentInChildren<TMPro.TMP_Text>().text = "TOO EXPENSIVE";
+          //  buyButton.GetComponentInChildren<TMPro.TMP_Text>().text = "TOO EXPENSIVE";
         }
         else
         {

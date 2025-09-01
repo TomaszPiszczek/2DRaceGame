@@ -1,6 +1,6 @@
 {
         "cars": [{
-        "Name": "Porsche 911 Turbo",
+        "Name": "Porsche 911",
         "Engine": { "Name": "3.8L Twin-Turbo H6", "HorsePower": 640, "FuelConsuption": 15, "Tier": 0 },
         "Turbocharger": { "Name": "Twin-Turbo System", "HpBoost": 100, "Tier": 0 },
         "Tire": { "Name": "Michelin Pilot Sport Cup", "Type": "Soft", "Friction": 0.99, "Durability": 150, "Tier": 0 },
@@ -14,7 +14,7 @@
         "Tier": 0
         },
         {
-        "Name": "Ferrari 488 GTB",
+        "Name": "Ferrari GTB",
         "Engine": { "Name": "3.9L Twin-Turbo V8", "HorsePower": 670, "FuelConsuption": 16, "Tier": 0 },
         "Turbocharger": { "Name": "Twin-Turbo V8", "HpBoost": 110, "Tier": 0 },
         "Tire": { "Name": "Pirelli P Zero Corsa", "Type": "Medium", "Friction": 0.98, "Durability": 140, "Tier": 0 },
@@ -42,7 +42,7 @@
         "Tier": 0
         },
         {
-        "Name": "Audi R8 V10 Plus",
+        "Name": "Audi R8",
         "Engine": { "Name": "5.2L V10", "HorsePower": 610, "FuelConsuption": 17, "Tier": 0 },
         "Turbocharger": { "Name": "Naturally Aspirated", "HpBoost": 115, "Tier": 0 },
         "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Medium", "Friction": 0.97, "Durability": 145, "Tier": 0 },
@@ -56,7 +56,7 @@
         "Tier": 0
         },
         {
-        "Name": "BMW M8 Competition",
+        "Name": "BMW M8",
         "Engine": { "Name": "4.4L Twin-Turbo V8", "HorsePower": 625, "FuelConsuption": 18, "Tier": 0 },
         "Turbocharger": { "Name": "Twin-Turbo M Power", "HpBoost": 125, "Tier": 0 },
         "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Soft", "Friction": 0.99, "Durability": 170, "Tier": 0 },
@@ -70,7 +70,7 @@
         "Tier": 0
         },
         {
-        "Name": "Mercedes-AMG GT R",
+        "Name": "Ferrari 458",
         "Engine": { "Name": "4.0L Twin-Turbo V8", "HorsePower": 585, "FuelConsuption": 16, "Tier": 0 },
         "Turbocharger": { "Name": "AMG Twin-Turbo", "HpBoost": 105, "Tier": 0 },
         "Tire": { "Name": "Michelin Pilot Sport Cup 2", "Type": "Medium", "Friction": 0.98, "Durability": 155, "Tier": 0 },
@@ -84,7 +84,7 @@
         "Tier": 0
         },
         {
-        "Name": "BMW M3 Competition",
+        "Name": "BMW M3",
         "Engine": { "Name": "3.0L Twin-Turbo I6", "HorsePower": 510, "FuelConsuption": 17, "Tier": 0 },
         "Turbocharger": { "Name": "Twin-Turbo S58", "HpBoost": 110, "Tier": 0 },
         "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Soft", "Friction": 0.99, "Durability": 160, "Tier": 0 },
@@ -98,7 +98,7 @@
         "Tier": 0
         },
         {
-        "Name": "Porsche 911 GT3",
+        "Name": "Porsche 911",
         "Engine": { "Name": "4.0L Naturally Aspirated H6", "HorsePower": 502, "FuelConsuption": 18, "Tier": 0 },
         "Turbocharger": { "Name": "Naturally Aspirated", "HpBoost": 120, "Tier": 0 },
         "Tire": { "Name": "Michelin Pilot Sport Cup 2", "Type": "Medium", "Friction": 0.98, "Durability": 165, "Tier": 0 },
@@ -112,7 +112,7 @@
         "Tier": 0
         },
         {
-        "Name": "Mercedes-AMG A45 S",
+        "Name": "Ferrari 458",
         "Engine": { "Name": "2.0L Turbo I4", "HorsePower": 421, "FuelConsuption": 17, "Tier": 0 },
         "Turbocharger": { "Name": "Single Turbo AMG", "HpBoost": 115, "Tier": 0 },
         "Tire": { "Name": "Michelin Pilot Sport 4S", "Type": "Soft", "Friction": 0.99, "Durability": 150, "Tier": 0 },

@@ -9,7 +9,6 @@ public class GarageManager : MonoBehaviour
     public Transform carListParent;
     public GameObject carSlotPrefab;
     public TMP_Text currentCarNameText;
-    public Image currentCarImage;
     public TMP_Text carStatsText;
     
     [Header("Car Display")]
@@ -103,11 +102,6 @@ public class GarageManager : MonoBehaviour
             carStatsText.text = currentCar.ToString();
         }
         
-        if (currentCarImage && !string.IsNullOrEmpty(currentCar.pathToTopDownImage))
-        {
-            Sprite carSprite = Resources.Load<Sprite>(currentCar.pathToTopDownImage);
-            if (carSprite) currentCarImage.sprite = carSprite;
-        }
     }
     
     private void ClearCarSlots()
