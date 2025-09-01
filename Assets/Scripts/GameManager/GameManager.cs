@@ -11,11 +11,10 @@ public class GameManager : MonoBehaviour
     public int startingMoney = 10000;
     public int defaultGarageSize = 10;
     
-    [Header("UI References")]
-    public TMPro.TMP_Text moneyDisplayText;
     
     private Player currentPlayer;
     private string saveFilePath;
+    private List<MoneyDisplay> moneyDisplays = new List<MoneyDisplay>();
     
     private void Awake()
     {
@@ -32,10 +31,6 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    private void Start()
-    {
-        UpdateMoneyDisplay();
-    }
     
     private void LoadOrCreatePlayer()
     {
@@ -172,11 +167,29 @@ public class GameManager : MonoBehaviour
         return currentPlayer.money;
     }
     
+    public void RegisterMoneyDisplay(MoneyDisplay display)
+    {
+        Debug.Log($"RegisterMoneyDisplay called with display: {display}");
+        if (!moneyDisplays.Contains(display))
+        {
+            moneyDisplays.Add(display);
+            Debug.Log($"MoneyDisplay registered. Total displays: {moneyDisplays.Count}");
+            display.UpdateDisplay();
+        }
+    }
+    
+    public void UnregisterMoneyDisplay(MoneyDisplay display)
+    {
+        moneyDisplays.Remove(display);
+    }
+    
     public void UpdateMoneyDisplay()
     {
-        if (moneyDisplayText != null)
+        Debug.Log($"UpdateMoneyDisplay called. Registered displays: {moneyDisplays.Count}");
+        moneyDisplays.RemoveAll(display => display == null);
+        foreach (MoneyDisplay display in moneyDisplays)
         {
-            moneyDisplayText.text = currentPlayer.money.ToString("N0");
+            display.UpdateDisplay();
         }
     }
     
