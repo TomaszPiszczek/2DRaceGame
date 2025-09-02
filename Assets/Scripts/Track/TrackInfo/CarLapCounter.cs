@@ -15,10 +15,10 @@ public class CarLapCounter : MonoBehaviour
     
     int numberOfPassedCheckpoints = 0;
     int lapsCompleted = 0;
-    const int lapsToComplete = 3;
+    const int lapsToComplete = 1;
     public int carPostion = 0;
     
-    public float[] lapTimes = new float[3];
+    public float[] lapTimes = new float[1];
     public float totalRaceTime = 0f;
     public bool isRaceFinished = false;
     public bool isPlayerCar = false;
@@ -74,7 +74,7 @@ public class CarLapCounter : MonoBehaviour
                     lapsCompleted++;
                     
                     float lapTime = Time.time - (lapsCompleted == 1 ? raceStartTime : timeAtLastPassedCheckPoint - lapTimes[lapsCompleted - 2]);
-                    if (lapsCompleted <= 3)
+                    if (lapsCompleted <= 1)
                     {
                         lapTimes[lapsCompleted - 1] = lapTime;
                     }
